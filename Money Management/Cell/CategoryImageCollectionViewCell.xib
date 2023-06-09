@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryImageCollectionViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="CategoryImageCollectionViewCell" customModule="Money_Management" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ib9-dq-Tuw">
+                        <rect key="frame" x="6" y="6" width="44" height="44"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ic_category_awards_normal" translatesAutoresizingMaskIntoConstraints="NO" id="AUl-R0-Kp5">
+                                <rect key="frame" x="2" y="2" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="iZn-6C-1fR"/>
+                                    <constraint firstAttribute="height" constant="40" id="nm3-2k-GXo"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="7Ba-QA-pCq"/>
+                            <constraint firstItem="AUl-R0-Kp5" firstAttribute="centerY" secondItem="Ib9-dq-Tuw" secondAttribute="centerY" id="E8c-lB-z6b"/>
+                            <constraint firstItem="AUl-R0-Kp5" firstAttribute="centerX" secondItem="Ib9-dq-Tuw" secondAttribute="centerX" id="IQB-Sw-PXi"/>
+                            <constraint firstAttribute="width" constant="44" id="X0p-px-85h"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Ib9-dq-Tuw" secondAttribute="bottom" constant="6" id="PPN-z8-i33"/>
+                <constraint firstItem="Ib9-dq-Tuw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="Tph-CW-aMo"/>
+                <constraint firstAttribute="trailing" secondItem="Ib9-dq-Tuw" secondAttribute="trailing" constant="6" id="swz-eE-hCs"/>
+            </constraints>
+            <size key="customSize" width="57" height="56"/>
+            <connections>
+                <outlet property="categoryImage" destination="AUl-R0-Kp5" id="xbZ-8t-Pbh"/>
+                <outlet property="view" destination="Ib9-dq-Tuw" id="4uw-HC-p7X"/>
+            </connections>
+            <point key="canvasLocation" x="125.19083969465649" y="21.83098591549296"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_category_awards_normal" width="44" height="44"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

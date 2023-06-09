@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_splash" translatesAutoresizingMaskIntoConstraints="NO" id="aGb-b5-xpJ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="wtZ-Xx-KoR">
+                                <rect key="frame" x="136.66666666666666" y="326" width="119.99999999999997" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="496-7Y-5EP"/>
+                                    <constraint firstAttribute="width" constant="120" id="yN7-SS-4gF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money Management" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm4-Za-pwc">
+                                <rect key="frame" x="44.333333333333343" y="446" width="304.33333333333326" height="38.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wtZ-Xx-KoR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-40" id="3ab-sQ-crs"/>
+                            <constraint firstItem="aGb-b5-xpJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="LVB-04-iMQ"/>
+                            <constraint firstItem="aGb-b5-xpJ" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="ZvC-Gz-x2i"/>
+                            <constraint firstItem="Fm4-Za-pwc" firstAttribute="top" secondItem="wtZ-Xx-KoR" secondAttribute="bottom" id="cQ6-TO-tnH"/>
+                            <constraint firstItem="aGb-b5-xpJ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="jtm-ya-cK9"/>
+                            <constraint firstItem="Fm4-Za-pwc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qLt-0H-30d"/>
+                            <constraint firstItem="wtZ-Xx-KoR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wCP-EV-9NB"/>
+                            <constraint firstAttribute="bottom" secondItem="aGb-b5-xpJ" secondAttribute="bottom" id="wEb-bI-Xox"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_splash" width="375" height="812"/>
+        <image name="logo" width="1024" height="1024"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.36078431372549019" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

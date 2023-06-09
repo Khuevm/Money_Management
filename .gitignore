@@ -1,0 +1,10 @@
+Money Management.xcworkspace/xcuserdata/
+Pods/
+*.DS_Store
+Money Management.xcodeproj/xcuserdata/
+build/
+fastlane/report.xml
+*.zip
+*.ipa
+*.dSYM
+*.xcuserstate

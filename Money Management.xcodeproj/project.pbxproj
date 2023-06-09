@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07E8060849A95BB406CDD4EE /* Pods_Money_Management.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596DDA938E5013FFCF04C7ED /* Pods_Money_Management.framework */; };
+		B8460F882A1FBC73006C83ED /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8460F862A1FBC73006C83ED /* CategoryTableViewCell.swift */; };
+		B8460F892A1FBC73006C83ED /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8460F872A1FBC73006C83ED /* CategoryTableViewCell.xib */; };
+		B8460F8B2A1FBF0E006C83ED /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8460F8A2A1FBF0E006C83ED /* Category.swift */; };
+		B8460F8D2A1FD717006C83ED /* CategoryForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8460F8C2A1FD717006C83ED /* CategoryForm.storyboard */; };
+		B8460F8F2A1FD730006C83ED /* CategoryFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8460F8E2A1FD730006C83ED /* CategoryFormVC.swift */; };
+		B8460F922A220E73006C83ED /* CategoryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8460F902A220E73006C83ED /* CategoryImageCollectionViewCell.swift */; };
+		B8460F932A220E73006C83ED /* CategoryImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8460F912A220E73006C83ED /* CategoryImageCollectionViewCell.xib */; };
+		B8460F962A225C50006C83ED /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8460F942A225C50006C83ED /* TransactionTableViewCell.swift */; };
+		B8460F972A225C50006C83ED /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8460F952A225C50006C83ED /* TransactionTableViewCell.xib */; };
+		B8460F992A225DD8006C83ED /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8460F982A225DD7006C83ED /* Transaction.swift */; };
+		B8460F9B2A226557006C83ED /* TransactionForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8460F9A2A226557006C83ED /* TransactionForm.storyboard */; };
+		B8460F9D2A226579006C83ED /* TransactionFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8460F9C2A226579006C83ED /* TransactionFormVC.swift */; };
+		B8460F9F2A226AC9006C83ED /* DimableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8460F9E2A226AC9006C83ED /* DimableView.swift */; };
+		B8463FBA2A1CF6C5003928F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FB92A1CF6C5003928F7 /* AppDelegate.swift */; };
+		B8463FBC2A1CF6C5003928F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FBB2A1CF6C5003928F7 /* SceneDelegate.swift */; };
+		B8463FC12A1CF6C5003928F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8463FBF2A1CF6C5003928F7 /* Main.storyboard */; };
+		B8463FC32A1CF6C6003928F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8463FC22A1CF6C6003928F7 /* Assets.xcassets */; };
+		B8463FC62A1CF6C6003928F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8463FC42A1CF6C6003928F7 /* LaunchScreen.storyboard */; };
+		B8463FD12A1CFBF8003928F7 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FD02A1CFBF8003928F7 /* CategoryVC.swift */; };
+		B8463FD32A1CFC04003928F7 /* ChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FD22A1CFC04003928F7 /* ChartVC.swift */; };
+		B8463FD52A1CFC23003928F7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FD42A1CFC23003928F7 /* HomeVC.swift */; };
+		B8463FD72A1D1084003928F7 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8463FD62A1D1084003928F7 /* LogIn.storyboard */; };
+		B8463FD92A1D1450003928F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8463FD82A1D1450003928F7 /* GoogleService-Info.plist */; };
+		B8463FDC2A1D1C2F003928F7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FDB2A1D1C2F003928F7 /* Constant.swift */; };
+		B8463FDF2A1D1D81003928F7 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FDE2A1D1D81003928F7 /* ColorExtension.swift */; };
+		B8463FE12A1D20C4003928F7 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FE02A1D20C4003928F7 /* LogInVC.swift */; };
+		B8463FE32A1D2896003928F7 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FE22A1D2896003928F7 /* MainVC.swift */; };
+		B8463FE52A1E76BB003928F7 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8463FE42A1E76BB003928F7 /* SignUp.storyboard */; };
+		B8463FE72A1E76F7003928F7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FE62A1E76F7003928F7 /* SignUpVC.swift */; };
+		B8463FE92A1E8650003928F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FE82A1E8650003928F7 /* User.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E779B51F198EA85408FA644 /* Pods-Money Management.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Money Management.debug.xcconfig"; path = "Target Support Files/Pods-Money Management/Pods-Money Management.debug.xcconfig"; sourceTree = "<group>"; };
+		596DDA938E5013FFCF04C7ED /* Pods_Money_Management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Money_Management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8460F862A1FBC73006C83ED /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		B8460F872A1FBC73006C83ED /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		B8460F8A2A1FBF0E006C83ED /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B8460F8C2A1FD717006C83ED /* CategoryForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryForm.storyboard; sourceTree = "<group>"; };
+		B8460F8E2A1FD730006C83ED /* CategoryFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFormVC.swift; sourceTree = "<group>"; };
+		B8460F902A220E73006C83ED /* CategoryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		B8460F912A220E73006C83ED /* CategoryImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		B8460F942A225C50006C83ED /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		B8460F952A225C50006C83ED /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		B8460F982A225DD7006C83ED /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		B8460F9A2A226557006C83ED /* TransactionForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionForm.storyboard; sourceTree = "<group>"; };
+		B8460F9C2A226579006C83ED /* TransactionFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFormVC.swift; sourceTree = "<group>"; };
+		B8460F9E2A226AC9006C83ED /* DimableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimableView.swift; sourceTree = "<group>"; };
+		B8463FB62A1CF6C5003928F7 /* Money Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8463FB92A1CF6C5003928F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B8463FBB2A1CF6C5003928F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B8463FC02A1CF6C5003928F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B8463FC22A1CF6C6003928F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8463FC52A1CF6C6003928F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B8463FC72A1CF6C6003928F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8463FD02A1CFBF8003928F7 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		B8463FD22A1CFC04003928F7 /* ChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVC.swift; sourceTree = "<group>"; };
+		B8463FD42A1CFC23003928F7 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		B8463FD62A1D1084003928F7 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
+		B8463FD82A1D1450003928F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B8463FDB2A1D1C2F003928F7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B8463FDE2A1D1D81003928F7 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		B8463FE02A1D20C4003928F7 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
+		B8463FE22A1D2896003928F7 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		B8463FE42A1E76BB003928F7 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		B8463FE62A1E76F7003928F7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		B8463FE82A1E8650003928F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F294BF36DFD61927DA519109 /* Pods-Money Management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Money Management.release.xcconfig"; path = "Target Support Files/Pods-Money Management/Pods-Money Management.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B8463FB32A1CF6C5003928F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07E8060849A95BB406CDD4EE /* Pods_Money_Management.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25DE21E0D0CE3F5795CB878B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				596DDA938E5013FFCF04C7ED /* Pods_Money_Management.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A378BC77F2CBA25968B3B48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E779B51F198EA85408FA644 /* Pods-Money Management.debug.xcconfig */,
+				F294BF36DFD61927DA519109 /* Pods-Money Management.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B8460F832A1FBB89006C83ED /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B8460F862A1FBC73006C83ED /* CategoryTableViewCell.swift */,
+				B8460F872A1FBC73006C83ED /* CategoryTableViewCell.xib */,
+				B8460F902A220E73006C83ED /* CategoryImageCollectionViewCell.swift */,
+				B8460F912A220E73006C83ED /* CategoryImageCollectionViewCell.xib */,
+				B8460F942A225C50006C83ED /* TransactionTableViewCell.swift */,
+				B8460F952A225C50006C83ED /* TransactionTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B8463FAD2A1CF6C5003928F7 = {
+			isa = PBXGroup;
+			children = (
+				B8463FB82A1CF6C5003928F7 /* Money Management */,
+				B8463FB72A1CF6C5003928F7 /* Products */,
+				8A378BC77F2CBA25968B3B48 /* Pods */,
+				25DE21E0D0CE3F5795CB878B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B8463FB72A1CF6C5003928F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8463FB62A1CF6C5003928F7 /* Money Management.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8463FB82A1CF6C5003928F7 /* Money Management */ = {
+			isa = PBXGroup;
+			children = (
+				B8460F832A1FBB89006C83ED /* Cell */,
+				B8463FDA2A1D1C1F003928F7 /* Support */,
+				B8463FCF2A1CF709003928F7 /* Controller */,
+				B8463FCE2A1CF6F2003928F7 /* View */,
+				B8463FCD2A1CF6E4003928F7 /* Model */,
+				B8463FB92A1CF6C5003928F7 /* AppDelegate.swift */,
+				B8463FBB2A1CF6C5003928F7 /* SceneDelegate.swift */,
+				B8463FC22A1CF6C6003928F7 /* Assets.xcassets */,
+				B8463FC72A1CF6C6003928F7 /* Info.plist */,
+				B8463FD82A1D1450003928F7 /* GoogleService-Info.plist */,
+			);
+			path = "Money Management";
+			sourceTree = "<group>";
+		};
+		B8463FCD2A1CF6E4003928F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8463FE82A1E8650003928F7 /* User.swift */,
+				B8460F8A2A1FBF0E006C83ED /* Category.swift */,
+				B8460F982A225DD7006C83ED /* Transaction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B8463FCE2A1CF6F2003928F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8463FBF2A1CF6C5003928F7 /* Main.storyboard */,
+				B8463FC42A1CF6C6003928F7 /* LaunchScreen.storyboard */,
+				B8463FD62A1D1084003928F7 /* LogIn.storyboard */,
+				B8463FE42A1E76BB003928F7 /* SignUp.storyboard */,
+				B8460F8C2A1FD717006C83ED /* CategoryForm.storyboard */,
+				B8460F9A2A226557006C83ED /* TransactionForm.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B8463FCF2A1CF709003928F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B8463FD02A1CFBF8003928F7 /* CategoryVC.swift */,
+				B8463FD22A1CFC04003928F7 /* ChartVC.swift */,
+				B8463FD42A1CFC23003928F7 /* HomeVC.swift */,
+				B8463FE02A1D20C4003928F7 /* LogInVC.swift */,
+				B8463FE22A1D2896003928F7 /* MainVC.swift */,
+				B8463FE62A1E76F7003928F7 /* SignUpVC.swift */,
+				B8460F8E2A1FD730006C83ED /* CategoryFormVC.swift */,
+				B8460F9C2A226579006C83ED /* TransactionFormVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B8463FDA2A1D1C1F003928F7 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				B8463FDD2A1D1D6B003928F7 /* Common */,
+				B8463FDB2A1D1C2F003928F7 /* Constant.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		B8463FDD2A1D1D6B003928F7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B8463FDE2A1D1D81003928F7 /* ColorExtension.swift */,
+				B8460F9E2A226AC9006C83ED /* DimableView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B8463FB52A1CF6C5003928F7 /* Money Management */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8463FCA2A1CF6C6003928F7 /* Build configuration list for PBXNativeTarget "Money Management" */;
+			buildPhases = (
+				0ECAE5CDA002AF8B74586DEA /* [CP] Check Pods Manifest.lock */,
+				B8463FB22A1CF6C5003928F7 /* Sources */,
+				B8463FB32A1CF6C5003928F7 /* Frameworks */,
+				B8463FB42A1CF6C5003928F7 /* Resources */,
+				5C1BD02C8E7A1F5DD4251F74 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Money Management";
+			productName = "Money Management";
+			productReference = B8463FB62A1CF6C5003928F7 /* Money Management.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B8463FAE2A1CF6C5003928F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					B8463FB52A1CF6C5003928F7 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = B8463FB12A1CF6C5003928F7 /* Build configuration list for PBXProject "Money Management" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B8463FAD2A1CF6C5003928F7;
+			productRefGroup = B8463FB72A1CF6C5003928F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B8463FB52A1CF6C5003928F7 /* Money Management */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B8463FB42A1CF6C5003928F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8460F972A225C50006C83ED /* TransactionTableViewCell.xib in Resources */,
+				B8460F8D2A1FD717006C83ED /* CategoryForm.storyboard in Resources */,
+				B8463FD72A1D1084003928F7 /* LogIn.storyboard in Resources */,
+				B8460F9B2A226557006C83ED /* TransactionForm.storyboard in Resources */,
+				B8460F892A1FBC73006C83ED /* CategoryTableViewCell.xib in Resources */,
+				B8463FC62A1CF6C6003928F7 /* LaunchScreen.storyboard in Resources */,
+				B8463FE52A1E76BB003928F7 /* SignUp.storyboard in Resources */,
+				B8463FD92A1D1450003928F7 /* GoogleService-Info.plist in Resources */,
+				B8460F932A220E73006C83ED /* CategoryImageCollectionViewCell.xib in Resources */,
+				B8463FC32A1CF6C6003928F7 /* Assets.xcassets in Resources */,
+				B8463FC12A1CF6C5003928F7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0ECAE5CDA002AF8B74586DEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Money Management-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C1BD02C8E7A1F5DD4251F74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Money Management/Pods-Money Management-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Money Management/Pods-Money Management-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Money Management/Pods-Money Management-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B8463FB22A1CF6C5003928F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8460F9F2A226AC9006C83ED /* DimableView.swift in Sources */,
+				B8460F8F2A1FD730006C83ED /* CategoryFormVC.swift in Sources */,
+				B8460F9D2A226579006C83ED /* TransactionFormVC.swift in Sources */,
+				B8463FBA2A1CF6C5003928F7 /* AppDelegate.swift in Sources */,
+				B8460F962A225C50006C83ED /* TransactionTableViewCell.swift in Sources */,
+				B8463FD52A1CFC23003928F7 /* HomeVC.swift in Sources */,
+				B8463FE12A1D20C4003928F7 /* LogInVC.swift in Sources */,
+				B8463FD12A1CFBF8003928F7 /* CategoryVC.swift in Sources */,
+				B8460F992A225DD8006C83ED /* Transaction.swift in Sources */,
+				B8463FE32A1D2896003928F7 /* MainVC.swift in Sources */,
+				B8463FBC2A1CF6C5003928F7 /* SceneDelegate.swift in Sources */,
+				B8463FD32A1CFC04003928F7 /* ChartVC.swift in Sources */,
+				B8463FDF2A1D1D81003928F7 /* ColorExtension.swift in Sources */,
+				B8463FE72A1E76F7003928F7 /* SignUpVC.swift in Sources */,
+				B8460F8B2A1FBF0E006C83ED /* Category.swift in Sources */,
+				B8463FDC2A1D1C2F003928F7 /* Constant.swift in Sources */,
+				B8460F922A220E73006C83ED /* CategoryImageCollectionViewCell.swift in Sources */,
+				B8463FE92A1E8650003928F7 /* User.swift in Sources */,
+				B8460F882A1FBC73006C83ED /* CategoryTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B8463FBF2A1CF6C5003928F7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8463FC02A1CF6C5003928F7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B8463FC42A1CF6C6003928F7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8463FC52A1CF6C6003928F7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B8463FC82A1CF6C6003928F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B8463FC92A1CF6C6003928F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B8463FCB2A1CF6C6003928F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E779B51F198EA85408FA644 /* Pods-Money Management.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AY5M8ZSZ4H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Money Management/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.khue.Money-Management";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B8463FCC2A1CF6C6003928F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F294BF36DFD61927DA519109 /* Pods-Money Management.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AY5M8ZSZ4H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Money Management/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.khue.Money-Management";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B8463FB12A1CF6C5003928F7 /* Build configuration list for PBXProject "Money Management" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8463FC82A1CF6C6003928F7 /* Debug */,
+				B8463FC92A1CF6C6003928F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8463FCA2A1CF6C6003928F7 /* Build configuration list for PBXNativeTarget "Money Management" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8463FCB2A1CF6C6003928F7 /* Debug */,
+				B8463FCC2A1CF6C6003928F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B8463FAE2A1CF6C5003928F7 /* Project object */;
+}
