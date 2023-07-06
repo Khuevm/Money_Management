@@ -19,9 +19,9 @@ class HomeVC: UIViewController {
     @IBOutlet weak var incomeLabel: UILabel!
     
     // MARK: - Variable
-    let db = Firestore.firestore()
-    let user = Auth.auth().currentUser
-    var transactions: [Transaction] = []
+    private let db = Firestore.firestore()
+    private var user = Auth.auth().currentUser
+    private var transactions: [Transaction] = []
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -44,6 +44,7 @@ class HomeVC: UIViewController {
         }
         
         configTableView()
+        getAllTransaction()
     }
     
     // MARK: - IBAction
@@ -59,19 +60,61 @@ class HomeVC: UIViewController {
     @IBAction func addButtonDidTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "TransactionForm", bundle: nil)
         let resultVC = storyboard.instantiateViewController(identifier: "TransactionForm") as TransactionFormVC
-        
         resultVC.modalPresentationStyle = .fullScreen
-        self.present(resultVC, animated: false, completion: nil)
+        
+        //Get first category
+        let email = user?.email
+        let categoryListRef = db.collection("user")
+            .document("\(email!)")
+            .collection("category")
+            .order(by: "id")
+            .limit(to: 1);
+
+        categoryListRef.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                self.showAlertError(error: err.localizedDescription)
+            } else {
+                let categoryList = querySnapshot!.documents
+                if categoryList.count > 0 {
+                    let firstCategory = try? categoryList[0].data(as: Category.self)
+                    resultVC.selectedCategory = firstCategory!
+                    resultVC.index = (self.transactions.last?.id ?? -1) + 1
+                    
+                    self.present(resultVC, animated: false, completion: nil)
+                } else {
+                    self.showAlertError(error: "You need to have category")
+                }
+            }
+        }
+    }
+    
+    // MARK: - Firebase
+    private func getAllTransaction(){
+        let email = user?.email
+        let transactionListRef = db.collection("user")
+            .document("\(email!)")
+            .collection("transaction")
+            .order(by: "id");
+        transactionListRef.addSnapshotListener { querySnapshot, error in
+            self.user = Auth.auth().currentUser
+            if self.user != nil, let snapshot = querySnapshot {
+                self.transactions.removeAll()
+                snapshot.documents.forEach { document in
+                    do {
+                        let transaction = try document.data(as: Transaction.self)
+                        self.transactions.append(transaction)
+                    } catch let error {
+                        print(error.localizedDescription)
+                    }
+                }
+                self.tableView.reloadData()
+            }
+        }
+
     }
     
     // MARK: - Helper
     private func configTableView(){
-        let transaction1 = Transaction(id: 0, category: Category(id: 0, name: "Cate 1", kind: 0, imageColor: "#F8B858", categoryImageId: 3), amount: 20000, date: Timestamp(date: Date()), note: "")
-        let transaction2 = Transaction(id: 1, category: Category(id: 0, name: "Cate 2", kind: 1, imageColor: "#c078d8", categoryImageId: 5), amount: 50000, date: Timestamp(date: Date()), note: "hihi")
-        
-        transactions.append(transaction1)
-        transactions.append(transaction2)
-        
         tableView.dataSource = self
         tableView.delegate = self
         
