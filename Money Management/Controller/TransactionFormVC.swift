@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-protocol TransactionFormControllerDelegate {
+protocol TransactionFormControllerDelegate: AnyObject {
     func sendData(category: Category)
 }
 
@@ -28,6 +28,7 @@ class TransactionFormVC: UIViewController {
     
     // MARK: - Variable
     private let user = Auth.auth().currentUser
+    private var selectedTransaction: Transaction?
     var selectedCategory: Category?
     var index = 0
     
@@ -48,18 +49,23 @@ class TransactionFormVC: UIViewController {
         amountTextField.delegate = self
         
         setCategory(selectedCategory!)
+        configForm()
         
         //enable keyboard
         amountTextField.becomeFirstResponder()
     }
 
     // MARK: - IBAction
+    @IBAction func deleteButtonDidTap(_ sender: Any) {
+        deleteTransaction(selectedTransaction!)
+        self.dismiss(animated: false)
+    }
+    
     @IBAction func backButtonDidTap(_ sender: Any) {
         self.dismiss(animated: false)
     }
     
     @IBAction func saveButtonDidTap(_ sender: Any) {
-        print(datePicker.date)
         let amount = Int(amountTextField.text!) ?? 0
         if amount == 0 {
             showAlertError(error: "Amount has to greater than 0")
@@ -97,7 +103,29 @@ class TransactionFormVC: UIViewController {
         }
     }
     
+    private func deleteTransaction(_ transaction: Transaction) {
+        let email = user?.email
+        Firestore.firestore()
+            .collection("user")
+            .document(email!)
+            .collection("transaction")
+            .document("\(transaction.id)")
+            .delete()
+    }
+    
     // MARK: - Helper
+    private func configForm(){
+        if (self.selectedTransaction == nil) {
+            deleteButton.isHidden = true
+        } else {
+            deleteButton.isHidden = false
+            
+            amountTextField.text = String(selectedTransaction!.amount)
+            noteTextField.text = selectedTransaction!.note
+            datePicker.date = selectedTransaction!.date.dateValue()
+        }
+    }
+    
     func setCategory(_ category: Category){
         selectedCategory = category
         
@@ -107,6 +135,13 @@ class TransactionFormVC: UIViewController {
         
         let imageName = K.imageName[category.categoryImageId]
         categoryiconImageView.image = UIImage(named: imageName)
+    }
+    
+    func setUpdateData(selectedTransaction: Transaction) {
+        self.selectedTransaction = selectedTransaction
+        
+        index = selectedTransaction.id
+        selectedCategory = selectedTransaction.category
     }
     
     func showAlertError(error: String){

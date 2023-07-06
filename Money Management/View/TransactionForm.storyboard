@@ -165,6 +165,9 @@
                                     <color key="baseForegroundColor" name="RedColor"/>
                                     <color key="baseBackgroundColor" red="1" green="0.8862745098" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iG2-e4-WS6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>

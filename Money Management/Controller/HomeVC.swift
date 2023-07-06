@@ -21,7 +21,11 @@ class HomeVC: UIViewController {
     // MARK: - Variable
     private let db = Firestore.firestore()
     private var user = Auth.auth().currentUser
-    private var transactions: [Transaction] = []
+    private var transactionsByDate = [String : [Transaction]]()
+    private var transactionsDate: [Date] = []
+    private let dateFormatter = DateFormatter()
+    private var lastIndex = -1
+    private var expense = 0, income = 0
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -42,6 +46,8 @@ class HomeVC: UIViewController {
                     self.showAlertError(error: error.localizedDescription)
                 }
         }
+        
+        dateFormatter.dateFormat = "MMMM d, yyyy"
         
         configTableView()
         getAllTransaction()
@@ -78,7 +84,7 @@ class HomeVC: UIViewController {
                 if categoryList.count > 0 {
                     let firstCategory = try? categoryList[0].data(as: Category.self)
                     resultVC.selectedCategory = firstCategory!
-                    resultVC.index = (self.transactions.last?.id ?? -1) + 1
+                    resultVC.index = self.lastIndex + 1
                     
                     self.present(resultVC, animated: false, completion: nil)
                 } else {
@@ -95,19 +101,41 @@ class HomeVC: UIViewController {
             .document("\(email!)")
             .collection("transaction")
             .order(by: "id");
-        transactionListRef.addSnapshotListener { querySnapshot, error in
+        
+        transactionListRef.addSnapshotListener { [self] querySnapshot, error in
             self.user = Auth.auth().currentUser
             if self.user != nil, let snapshot = querySnapshot {
-                self.transactions.removeAll()
+                self.transactionsByDate.removeAll()
+                self.transactionsDate.removeAll()
                 snapshot.documents.forEach { document in
                     do {
                         let transaction = try document.data(as: Transaction.self)
-                        self.transactions.append(transaction)
+                        let transactionDate = transaction.date.dateValue()
+                        
+                        lastIndex = transaction.id
+                        
+                        //calculate expense income
+                        if transaction.category.kind == 0 {
+                            expense += transaction.amount
+                        } else {
+                            income += transaction.amount
+                        }
+                        
+                        //add date if not visible
+                        if self.transactionsDate.first(where: {
+                            self.isDateEqual($0, transactionDate)
+                        }) == nil {
+                            transactionsDate.append(transactionDate)
+                            transactionsByDate[dateFormatter.string(from: transactionDate)] = []
+                        }
+                        transactionsByDate[dateFormatter.string(from: transactionDate)]!.append(transaction)
                     } catch let error {
                         print(error.localizedDescription)
                     }
                 }
+                transactionsDate.sort()
                 self.tableView.reloadData()
+                reloadAmountLabel()
             }
         }
 
@@ -135,20 +163,56 @@ class HomeVC: UIViewController {
         resultVC.modalPresentationStyle = .fullScreen
         self.present(resultVC, animated: false, completion: nil)
     }
+    
+    private func isDateEqual(_ date1: Date, _ date2: Date) -> Bool {
+        return dateFormatter.string(from: date1) == dateFormatter.string(from: date2)
+    }
+    
+    private func reloadAmountLabel(){
+        expenseLabel.text = "-\(expense)"
+        incomeLabel.text = "+\(income)"
+    }
 }
 
 extension HomeVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let currentTransactionDate = transactionsDate[indexPath.section]
+        let strDate = dateFormatter.string(from: currentTransactionDate)
+        
+        let storyboard = UIStoryboard(name: "TransactionForm", bundle: nil)
+        let resultVC = storyboard.instantiateViewController(identifier: "TransactionForm") as TransactionFormVC
+        resultVC.setUpdateData(selectedTransaction: transactionsByDate[strDate]![indexPath.row])
+        
+        resultVC.modalPresentationStyle = .fullScreen
+        self.present(resultVC, animated: false, completion: nil)
+    }
 }
 
 extension HomeVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let currentTransactionDate = transactionsDate[section]
+        return dateFormatter.string(from: currentTransactionDate)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return transactionsDate.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transactions.count
+        let currentTransactionDate = transactionsDate[section]
+        let strDate = dateFormatter.string(from: currentTransactionDate)
+        
+        return transactionsByDate[strDate]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionTableViewCell") as! TransactionTableViewCell
-        cell.setData(transaction: transactions[indexPath.row])
+        
+        let currentTransactionDate = transactionsDate[indexPath.section]
+        let strDate = dateFormatter.string(from: currentTransactionDate)
+        
+        cell.setData(transaction: transactionsByDate[strDate]![indexPath.row])
         return cell
     }
     
