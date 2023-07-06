@@ -38,6 +38,8 @@
 		B8463FE52A1E76BB003928F7 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8463FE42A1E76BB003928F7 /* SignUp.storyboard */; };
 		B8463FE72A1E76F7003928F7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FE62A1E76F7003928F7 /* SignUpVC.swift */; };
 		B8463FE92A1E8650003928F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463FE82A1E8650003928F7 /* User.swift */; };
+		B8AE86562A363A8000ABAF10 /* TransactionCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AE86552A363A8000ABAF10 /* TransactionCategory.storyboard */; };
+		B8AE86582A363A9B00ABAF10 /* TransactionCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE86572A363A9B00ABAF10 /* TransactionCategoryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 		B8463FE42A1E76BB003928F7 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		B8463FE62A1E76F7003928F7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		B8463FE82A1E8650003928F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B8AE86552A363A8000ABAF10 /* TransactionCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionCategory.storyboard; sourceTree = "<group>"; };
+		B8AE86572A363A9B00ABAF10 /* TransactionCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryVC.swift; sourceTree = "<group>"; };
 		F294BF36DFD61927DA519109 /* Pods-Money Management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Money Management.release.xcconfig"; path = "Target Support Files/Pods-Money Management/Pods-Money Management.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +178,7 @@
 				B8463FE42A1E76BB003928F7 /* SignUp.storyboard */,
 				B8460F8C2A1FD717006C83ED /* CategoryForm.storyboard */,
 				B8460F9A2A226557006C83ED /* TransactionForm.storyboard */,
+				B8AE86552A363A8000ABAF10 /* TransactionCategory.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				B8463FE62A1E76F7003928F7 /* SignUpVC.swift */,
 				B8460F8E2A1FD730006C83ED /* CategoryFormVC.swift */,
 				B8460F9C2A226579006C83ED /* TransactionFormVC.swift */,
+				B8AE86572A363A9B00ABAF10 /* TransactionCategoryVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8460F972A225C50006C83ED /* TransactionTableViewCell.xib in Resources */,
+				B8AE86562A363A8000ABAF10 /* TransactionCategory.storyboard in Resources */,
 				B8460F8D2A1FD717006C83ED /* CategoryForm.storyboard in Resources */,
 				B8463FD72A1D1084003928F7 /* LogIn.storyboard in Resources */,
 				B8460F9B2A226557006C83ED /* TransactionForm.storyboard in Resources */,
@@ -349,6 +356,7 @@
 				B8463FDF2A1D1D81003928F7 /* ColorExtension.swift in Sources */,
 				B8463FE72A1E76F7003928F7 /* SignUpVC.swift in Sources */,
 				B8460F8B2A1FBF0E006C83ED /* Category.swift in Sources */,
+				B8AE86582A363A9B00ABAF10 /* TransactionCategoryVC.swift in Sources */,
 				B8463FDC2A1D1C2F003928F7 /* Constant.swift in Sources */,
 				B8460F922A220E73006C83ED /* CategoryImageCollectionViewCell.swift in Sources */,
 				B8463FE92A1E8650003928F7 /* User.swift in Sources */,

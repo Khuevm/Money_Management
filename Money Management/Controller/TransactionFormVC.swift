@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol TransactionFormControllerDelegate: AnyObject {
+    func sendData(category: Category)
+}
+
 class TransactionFormVC: UIViewController {
+    // MARK: - IBOutlet
     @IBOutlet weak var categoryColorView: UIView!
     @IBOutlet weak var categoryiconImageView: UIImageView!
     @IBOutlet weak var saveButton: UIButton!
@@ -15,9 +20,14 @@ class TransactionFormVC: UIViewController {
     @IBOutlet weak var categoryView: DimableView!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var noteTextField: UITextField!
     @IBOutlet weak var backButton: UIButton!
     
+    // MARK: - Variable
+    var selectedCategory: Category?
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,15 +42,38 @@ class TransactionFormVC: UIViewController {
 
         noteTextField.delegate = self
         amountTextField.delegate = self
+        
+        //enable keyboard
         amountTextField.becomeFirstResponder()
     }
 
+    // MARK: - IBAction
     @IBAction func backButtonDidTap(_ sender: Any) {
         self.dismiss(animated: false)
     }
-    @IBAction func categoryViewDidTap(_ sender: Any) {
+    
+    @IBAction func saveButtonDidTap(_ sender: Any) {
+        print(datePicker.date)
     }
-    @IBAction func dateViewDidTap(_ sender: Any) {
+    
+    @IBAction func categoryViewDidTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "TransactionCategory", bundle: nil)
+        let resultVC = storyboard.instantiateViewController(identifier: "TransactionCategory") as TransactionCategoryVC
+        
+        resultVC.transactionFormDelegate = self
+        self.present(resultVC, animated: true, completion: nil)
+    }
+    
+    // MARK: - Helper
+    func setCategory(_ category: Category){
+        selectedCategory = category
+        
+        categoryName.text = category.name
+        categoryColorView.backgroundColor = UIColor(hexString: category.imageColor)
+        categoryColorView.layer.cornerRadius = 22
+        
+        let imageName = K.imageName[category.categoryImageId]
+        categoryiconImageView.image = UIImage(named: imageName)
     }
 }
 
@@ -53,4 +86,9 @@ extension TransactionFormVC: UITextFieldDelegate {
     }
 }
 
-
+extension TransactionFormVC: TransactionFormControllerDelegate {
+    func sendData(category: Category) {
+        setCategory(category)
+    }
+    
+}

@@ -9,7 +9,6 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-
 class HomeVC: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var logOutButton: UIButton!

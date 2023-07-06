@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Transaction CategoryVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="TransactionCategory" id="Y6W-OH-hqX" customClass="TransactionCategoryVC" customModule="Money_Management" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IP0-n1-NWB">
+                                <rect key="frame" x="155" y="91" width="83.333333333333314" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sAr-QK-vCD">
+                                <rect key="frame" x="0.0" y="186" width="393" height="632"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3MY-Ol-tY6">
+                                <rect key="frame" x="32" y="135" width="329" height="32"/>
+                                <segments>
+                                    <segment title="Expense"/>
+                                    <segment title="Income"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="2Ho-qr-Vk1"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3MY-Ol-tY6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="Mdr-Gd-ECy"/>
+                            <constraint firstItem="sAr-QK-vCD" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Mrd-e9-GRw"/>
+                            <constraint firstItem="sAr-QK-vCD" firstAttribute="top" secondItem="3MY-Ol-tY6" secondAttribute="bottom" constant="20" id="TQS-u4-CVI"/>
+                            <constraint firstItem="IP0-n1-NWB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="VSv-9E-mP7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3MY-Ol-tY6" secondAttribute="trailing" constant="32" id="Y4Z-YZ-1l0"/>
+                            <constraint firstItem="IP0-n1-NWB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="YnZ-YW-gaF"/>
+                            <constraint firstItem="3MY-Ol-tY6" firstAttribute="top" secondItem="IP0-n1-NWB" secondAttribute="bottom" constant="20" id="cXA-c6-YVj"/>
+                            <constraint firstItem="3MY-Ol-tY6" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eqf-UM-dJp"/>
+                            <constraint firstItem="sAr-QK-vCD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="izT-G2-hdY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sAr-QK-vCD" secondAttribute="bottom" id="qWS-0V-zc7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="segment" destination="3MY-Ol-tY6" id="Li1-6t-wiy"/>
+                        <outlet property="tableView" destination="sAr-QK-vCD" id="hCK-cv-pqW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.93333333333333335" green="0.94901960784313721" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -41,7 +41,7 @@ class CategoryVC: UIViewController {
     @IBAction func addButtonDidTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "CategoryForm", bundle: nil)
         let resultVC = storyboard.instantiateViewController(identifier: "CategoryForm") as CategoryFormVC
-        resultVC.setAddData(index: categories.count)
+        resultVC.setAddData(index: (categories.last?.id ?? -1) + 1) //if have no cate -> newcate id = 0
         
         resultVC.modalPresentationStyle = .fullScreen
         self.present(resultVC, animated: false, completion: nil)
@@ -107,6 +107,7 @@ class CategoryVC: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension CategoryVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -121,6 +122,7 @@ extension CategoryVC: UITableViewDelegate {
     
 }
 
+// MARK: - UITableViewDataSource
 extension CategoryVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoriesByKind.count

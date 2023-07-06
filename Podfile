@@ -9,5 +9,6 @@ target 'Money Management' do
 	pod 'FirebaseAuth'
 	pod 'FirebaseFirestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'IQKeyboardManagerSwift'
 
 end

@@ -11,8 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryImageCollectionViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="CategoryImageCollectionViewCell" customModule="Money_Management" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryImageCollectionViewCell" id="gTV-IL-0wX" customClass="CategoryImageCollectionViewCell" customModule="Money_Management" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -43,6 +44,7 @@
                 <constraint firstAttribute="bottom" secondItem="Ib9-dq-Tuw" secondAttribute="bottom" constant="6" id="PPN-z8-i33"/>
                 <constraint firstItem="Ib9-dq-Tuw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="Tph-CW-aMo"/>
                 <constraint firstAttribute="trailing" secondItem="Ib9-dq-Tuw" secondAttribute="trailing" constant="6" id="swz-eE-hCs"/>
+                <constraint firstItem="Ib9-dq-Tuw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="xRJ-Vs-coL"/>
             </constraints>
             <size key="customSize" width="57" height="56"/>
             <connections>
