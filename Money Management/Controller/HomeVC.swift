@@ -105,6 +105,8 @@ class HomeVC: UIViewController {
         transactionListRef.addSnapshotListener { [self] querySnapshot, error in
             self.user = Auth.auth().currentUser
             if self.user != nil, let snapshot = querySnapshot {
+                expense = 0
+                income = 0
                 self.transactionsByDate.removeAll()
                 self.transactionsDate.removeAll()
                 snapshot.documents.forEach { document in

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class CategoryVC: UIViewController {
     // MARK: - IBOutlet
@@ -54,6 +55,7 @@ class CategoryVC: UIViewController {
         tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
     }
     
+    // MARK: - Firebase
     private func getAllCategory(){
         categories.removeAll()
         
@@ -77,6 +79,7 @@ class CategoryVC: UIViewController {
                             if let index = self.categories.firstIndex(where: { category in
                                 category.id == modifiedCategory.id
                             }) {
+                                self.updateTransaction(with: modifiedCategory)
                                 self.categories[index] = modifiedCategory
                             }
                             
@@ -85,6 +88,7 @@ class CategoryVC: UIViewController {
                             self.categories.removeAll { category in
                                 category.id == removeCategory.id
                             }
+                            self.removeTransaction(with: removeCategory)
                         }
                         
                         self.getCategoryByKind(kind: self.segment.selectedSegmentIndex)
@@ -97,6 +101,67 @@ class CategoryVC: UIViewController {
 
     }
     
+    private func updateTransaction(with category: Category) {
+        let email = user?.email
+        db.collection("user")
+            .document("\(email!)")
+            .collection("transaction")
+            .getDocuments { (querySnapshot, err) in
+                if let err = err {
+                    print(err.localizedDescription)
+                } else {
+                    do {
+                        for document in querySnapshot!.documents {
+                            var transaction = try document.data(as: Transaction.self)
+                            if transaction.category.id == category.id {
+                                transaction.category = category
+                                
+                                try Firestore.firestore()
+                                    .collection("user")
+                                    .document(email!)
+                                    .collection("transaction")
+                                    .document("\(transaction.id)")
+                                    .setData(from: transaction)
+                            }
+                            
+                        }
+                    } catch let err {
+                        print(err)
+                    }
+                }
+            }
+    }
+    
+    private func removeTransaction(with category: Category) {
+        let email = user?.email
+        db.collection("user")
+            .document("\(email!)")
+            .collection("transaction")
+            .getDocuments { (querySnapshot, err) in
+                if let err = err {
+                    print(err.localizedDescription)
+                } else {
+                    do {
+                        for document in querySnapshot!.documents {
+                            var transaction = try document.data(as: Transaction.self)
+                            if transaction.category.id == category.id {
+                                try Firestore.firestore()
+                                    .collection("user")
+                                    .document(email!)
+                                    .collection("transaction")
+                                    .document("\(transaction.id)")
+                                    .delete()
+                            }
+                            
+                        }
+                    } catch let err {
+                        print(err)
+                    }
+                }
+            }
+    }
+    
+    // MARK: - Helper
     private func getCategoryByKind(kind: Int){
         categoriesByKind.removeAll()
         categoriesByKind = categories.filter(){

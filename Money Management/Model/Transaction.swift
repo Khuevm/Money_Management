@@ -10,7 +10,7 @@ import FirebaseFirestore
 
 struct Transaction: Codable {
     let id: Int
-    let category: Category
+    var category: Category
     let amount: Int
     let date: Timestamp
     let note: String
